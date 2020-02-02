@@ -1,5 +1,5 @@
-const socket = io();
-
+var origin = window.location.origin;
+const socket = io(origin);
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
 const messages_container = document.getElementById("messages");
