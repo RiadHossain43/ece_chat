@@ -1,9 +1,9 @@
 var PORT = process.env.PORT || 3000;
 var express = require('express');
 var app = express();
-var https = require('https');
+var http = require('http');
 
-var server = https.Server(app);
+var server = http.Server(app);
 
 server.listen(PORT,function(){
     console.log("Chat server running");
