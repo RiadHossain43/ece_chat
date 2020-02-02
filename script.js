@@ -9,6 +9,9 @@ const messages_container = document.getElementById("messages");
 
 // communicating with server in real time...
 socket.on('Chat_msg', data => {
+
+    alert(data);
+    
     var time = new Date();
     time = time.toISOString().split('T')[0];
 
