@@ -1,4 +1,4 @@
-const socket = io('https://ece-chat-room.herokuapp.com');
+const socket = io('https://cdnjs.cloudflare.com');
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
 const messages_container = document.getElementById("messages");
