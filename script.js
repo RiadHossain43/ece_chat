@@ -1,4 +1,5 @@
 var origin = window.location.origin;
+console.log(origin);
 const socket = io(origin);
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
