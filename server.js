@@ -1,4 +1,6 @@
-var PORT = process.env.PORT || 3000;
+var PORT = 443;
+
+
 const io = require('socket.io')(PORT);
 
 io.on('connection',socket=>{
