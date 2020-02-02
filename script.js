@@ -11,7 +11,7 @@ const messages_container = document.getElementById("messages");
 socket.on('Chat_msg', data => {
 
     alert(data);
-    
+
     var time = new Date();
     time = time.toISOString().split('T')[0];
 
@@ -32,7 +32,9 @@ msg_form.addEventListener('submit', e => {
     var time = new Date();
     time = time.toISOString().split('T')[0];
     const msg = msg_input.value;
+
     socket.emit('send_chat_msg', msg);
+    alert("masg send");
     msg_input.value = "";
     append_msg_self(msg, time)
 });
