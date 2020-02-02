@@ -1,0 +1,193 @@
+body
+{
+	margin: 0;
+    padding: 0;
+    background : #eee;
+    font-family: 'Poppins', sans-serif;
+}
+#style_1
+{
+    position: absolute;
+    width: 100%;
+    height: 5vh;
+    top: 0;
+    background: #4DD0E1;
+    z-index: 4;
+}
+#logo
+{
+
+}
+#style_2
+{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background-color:rgba(189,195,199 ,.5);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+#style_2 h1
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: transparent;
+}
+#style_2 h1 span
+{
+    margin: 30px;
+    font-size: 10vw;
+}
+#style_3
+{
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: rgba(189,195,199 ,.5);
+    left: 0;
+}
+#container
+{
+    position: absolute;
+    background-color:white;
+    height: 60%;
+    width: 40%;
+    top: 50%;
+    left: 85%;
+    transform: translate(-75%,-50%);
+    box-shadow: 0 12px 12px -2px gray;
+    border: .5px solid black;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    overflow: hidden;
+    z-index: 3;
+}
+#signin
+{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+#signup
+{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.form
+{
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    display: visible;
+    transition: 1s;
+}
+.signup_form
+{
+    right: 0;
+}
+.signin_form
+{
+    left: 0;
+}
+.form input
+{
+    margin: 15% auto 0% auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #E0F2F1;
+}
+.form button
+{
+    margin: 15% auto 0% auto;
+    padding: 15px 30px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    background-color: #4DD0E1;
+    cursor: pointer;
+}
+.form h1
+{
+    margin: 10% auto 0% auto;
+    padding: 15px;
+    background: transparent;
+}
+.form p{
+    font-size: 13px;
+    margin: 0 auto;
+}
+.content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top right, #4DD0E1 , #80DEEA);
+    top: 45%;
+    transform: translateY(-45%);
+    display: visible;
+    transition: 1s;
+    
+}
+.signin_content
+{
+    right: 0;
+}
+.signup_content
+{
+    left: 0;
+}
+.greetings
+{
+    margin: 30% auto 0% auto;
+    font-size: 25px;
+    text-align: center;
+    background: transparent;
+    color:white;
+}
+.form_text
+{
+    margin: 10% 10% 0% 10%;
+    font-size: 13px;
+    text-align: center;
+    background: transparent;
+    color: white;
+}
+.cng_btn
+{
+    position: relative;
+    margin: 15% auto 0% auto;
+    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 17px 50px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.left_shift
+{
+    left: -100%;
+}
+.right_shift
+{
+    right: -100%;
+}
+
+@media screen and (max-width: 600px) {
+    
+
+    
+
+}

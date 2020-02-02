@@ -1,0 +1,616 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.mainbody
+{
+	background:#ECEFF1;
+	font-family: 'Poppins', sans-serif;
+}
+.menu
+{
+	display: none;
+}
+#container
+{
+	position: absolute;
+	background: white;
+	height: 90%;
+	width: 90%;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: row;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 12px 12px -2px gray;
+}
+.backlink
+{
+	display: none;
+}
+#navigation
+{
+	flex: 1.5;
+	background:#222f3e;
+	display: flex;
+	flex-direction: column;
+}
+#navigation i
+{
+	margin: auto 12px; 
+	font-size: 16px;
+}
+#developer
+{
+	height: 40%;
+}
+#demimgwrapper
+{
+	position: relative;
+	width: 120px;
+	height: 120px;
+	top:40%;
+	left:50%;
+	transform: translate(-50%,-40%);
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+	border: 1px solid black;
+	background: transparent;
+}
+#developerImage
+{
+	background: url('devdemo.jpg');
+	background-size: cover;
+	position: relative;
+	height: 95%;
+	width: 95%;
+	top:50%;
+	left:50%;
+	border-radius: 50%;
+	transform: translate(-50%,-50%);
+}
+#devname
+{
+	position: relative;
+	background: none;
+	top: 25%;
+	font-size: 12px;
+	margin: 10px;
+	text-align: center;
+	cursor: pointer;
+	color: #eeeeee;
+}
+#devname h3
+{
+	font-size: 20px;
+}
+#documents,
+#images,
+#resources,
+#job_news
+{
+	height: 40px;
+	overflow: hidden;
+}
+.link
+{
+	position: relative;
+	left: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+	margin:auto 2px;
+	cursor: pointer;
+}
+.link:hover .point
+{
+	width: 10px;
+	height: 1px;
+	background: white;
+	border-radius: 2px;
+	display: inline-block;
+}
+#documents
+{
+	background:#2c3e50;
+	color: #eeeeee;
+	font-size: 14px;
+}
+#images
+{
+    background:#2c3e50;
+    color: #eeeeee;
+    font-size: 14px;
+}
+#resources
+{
+    background:#2c3e50;
+    color: #eeeeee;
+    font-size: 14px;
+}
+#job_news
+{
+    background:#2c3e50;
+    color: #eeeeee;
+    font-size: 14px;
+}
+#documents:hover,
+#images:hover,
+#resources:hover,
+#job_news:hover
+{
+	background:#34495e ;
+}
+.logout
+{
+	margin-top: 100px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	justify-content: space-around;
+	cursor: pointer;
+}
+.logout:hover
+{
+	color: #576574;
+}
+#people
+{
+	flex:2;
+	background:#E0F2F1;
+	border-right: 1px solid black;
+}
+
+.frndlist
+{
+	background: none;
+	height: 20%;
+	margin-bottom: 5%;
+}
+.frndlist h3 i
+{
+	margin-right:10px;
+}
+.frndlist h3
+{
+	position: relative;
+	top: 20%;
+	left: 15%;
+}
+.Down
+{
+ margin-left:20%;
+}
+.frndlist p
+{
+	margin: 8% 15%;
+	font-size: 12px;
+}
+#searchBox
+{
+	position: relative;
+	left:10%;
+	bottom: 10%;
+	height:25%;
+	width: 70%;
+	border-radius: 30px;
+	border: 2px solid black;
+	margin-bottom: 10px;
+}
+#searchBox input
+{
+	height: 100%;
+	border:0;
+	background: none;
+	outline: none;
+	width: 80%;
+	margin-left: 5%;
+}
+#searchBox i
+{
+	cursor: pointer;
+}
+.frnd
+{
+	height: 10%;
+	width: 95%;
+	background: none;
+	display: flex;
+	flex-direction: row;
+	margin: 3px auto;
+	border-radius: 5px;
+	overflow: hidden;
+	border:1px solid black;
+}
+
+.frndimg
+{
+	background: url('devdemo.jpg');
+	background-size: cover;
+	flex: 1;
+	border-radius: 10px;
+	margin: 10px;
+	cursor: pointer;
+}
+.frndname
+{
+	background: none;
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+#frndappr
+{
+	font-size: 11px;
+}
+#chatbody
+{
+	flex:5;
+	background: none;
+	display: flex;
+	flex-direction: column;
+}
+#chat_header
+{
+	flex:1.2;
+	background: none;
+}
+.menubar
+{
+	display: none;
+}
+#newmessege
+{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 50px;
+	width: 150px;
+	margin-left:5%;
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	background: #e67e22;
+}
+#buttons
+{
+	float: right;
+	display: flex;
+	flex-direction: row; 
+	list-style: none;
+	margin-right: 20px;
+}
+.help_icons
+{
+	padding: 20px;
+	font-size: 20px;
+}
+.help_icons i 
+{
+	cursor: pointer;
+}
+#messages
+{
+	flex: 7;
+	width: 91%;
+	margin: 5px auto;
+	background:none;
+	display: flex;
+	flex-direction: column-reverse;
+	overflow: -moz-scrollbars-none;
+	overflow-y: scroll;
+}
+#messages::-webkit-scrollbar {
+  display: none;
+}
+#messages{
+  -ms-overflow-style: none;
+}
+.new_msg
+{
+	animation: new_msg 1.5s ease-in-out infinite;
+}
+.msg_row
+{
+	display: grid;
+	grid-template-columns: 70%;
+	margin-bottom: 20px;
+}
+.msg_content
+{
+	display: grid;
+}
+.sender_img
+{
+	background: url('devdemo.jpg');
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-size: cover;
+	margin-bottom: 10px;
+	grid-row: span 2;
+}
+
+.sender_img .sender_name
+{
+	position: relative;
+	left: 110%;
+	font-size: 15px;
+}
+.sender_msg
+{
+	justify-items: start;
+}
+.sender_msg .msg_content
+{
+	grid-template-columns: 48px 1fr;
+	grid-column-gap: 15px;
+}
+
+.my_msg
+{
+	justify-content: end;
+	
+}
+.my_msg .msg_content
+{
+	justify-items:end;
+}
+.msg_txt
+{
+	padding: 9px 14px;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.msg_time
+{
+	font-size: 12px;
+}
+.my_msg .msg_txt
+{
+	background: #222f3e;
+	color: white;
+	border-radius: 10px 10px 0 10px;
+}
+.sender_msg .msg_txt
+{
+	background: #E0F2F1;
+	border-radius: 10px 10px 10px 0px;
+
+}
+#msg_typesection
+{
+	flex: 1;
+	background: transparent;
+	display: flex;
+}
+
+#msg_pins
+{
+	width: 15%;
+	display: flex;
+	flex: row;
+	list-style: none;
+	font-size: 23px;
+	margin-left: 2%;
+	background: transparent;
+}
+.pin_icons
+{
+	margin: 10px;
+	padding: 4px;
+	cursor: pointer;
+}
+#msg_input
+{
+	position: relative;
+	width: 70%;
+	height: 50px;
+    resize: none;
+    font-size: 16px;
+    top: 50%;
+    border:none;
+    transform:translateY(-50%);
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+}
+#send
+{
+	position: relative;
+	background: white;
+	height: 50px;
+	width: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 2%;
+	border-radius: 50%;
+	overflow: hidden;
+	outline: none;
+	cursor: pointer;
+	font-size: 20px;
+	border:1px solid black;
+}
+@keyframes new_msg{
+	0%{
+		transform: translate(0%,-50%);
+	}7%,21%,35%,49%{
+		transform: translate(2%,-50%);
+	}14%,28%,42%,56%{
+		transform: translate(-2%,-50%);
+	}
+	60%
+	{
+		transform: translate(0,-50%);
+	}100%{
+		transform: translate(0,-50%);
+	}
+}
+
+@media screen and (max-width: 950px) {
+    
+	#container
+	{
+		display: block;
+		width: 100%;
+		height: 100vh;
+		border-radius: 0;
+	}
+	#people
+	{
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		left:-100%;
+	
+	}
+	#navigation
+	{
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		left:-100%;
+		
+	}
+	#chatbody
+	{
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		left:0%;
+	}
+
+	.menubar
+{
+	position: relative;
+	display: inherit;
+	background: #222f3e ;
+	color: white;
+	font-size: 20px;
+}
+.menubar i
+{
+	margin: 10px 15px;
+}
+	#newmessege
+{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 40px;
+	width: 100px;
+	margin-left:5%;
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	background: #e67e22;
+	font-size: 13px;
+}
+	#msg_typesection
+{
+	flex: 1;
+	background: transparent;
+	display: flex;
+}
+
+#msg_pins
+{
+	width: 15%;
+	display: flex;
+	flex-direction:  row;
+	list-style: none;
+	font-size: 18px;
+	margin:auto;
+	background: transparent;
+}
+.pin_icons
+{
+	margin: 0;
+	padding: 0px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.pin_icons i
+{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin:0;
+	cursor: pointer;
+	background: transparent;
+	margin :5px;
+}
+#msg_input
+{
+	width: 65%;
+	height: 50%;   
+}
+#send
+{
+	height: 40px;
+	width: 40px;
+	margin:0 2% 0 2%;
+}
+
+.activate{
+	left:0;
+}
+.deactivate
+{
+	left:-100%;
+}
+.menu
+{
+	display: inherit;
+	width: 100%;
+	height: 100vh;
+	background: #222f3e;
+	clip-path: circle(10px at 0% -3%);
+	-webkit-clip-path: circle(10px at 0% -3%);
+	transition: all 1s ease-out;
+}
+.menu i
+{
+	color: white;
+	margin: 10px;
+}
+.menu ul
+{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	list-style: none;
+	color: white;
+}
+.menu ul li 
+{
+	margin: 20px;
+}
+.backlink
+{
+	display: inline;
+	margin: 10px;
+}
+.menu ul li:hover
+{
+	color: black;
+}
+.open
+{
+	clip-path: circle(1200px at 0% -3%);
+	-webkit-clip-path: circle(1200px at 0% -3%);
+}
+
+}
