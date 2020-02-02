@@ -4,7 +4,7 @@
 	<title></title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script defer src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+	<script defer src="https://52.1.26.16:3000/socket.io/socket.io.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/426991ed3e.js" crossorigin="anonymous"></script>
 	<script defer type="text/javascript" src="script.js"></script>
