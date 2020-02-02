@@ -1,7 +1,8 @@
 var origin = window.location.hostname;
-var port =  window.location.port || 3000;
+var port =  window.location.port;
 console.log(port);
 const socket = io('https://'+ origin +':' + port );
+
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
 const messages_container = document.getElementById("messages");
