@@ -12,6 +12,9 @@ server.listen(PORT,function(){
 const io = require('socket.io')(server);
 
 io.on('connection',socket=>{
+
+    socket.emit("notify","hello world");
+
     socket.on("send_chat_msg",msg=>{
         socket.broadcast.emit("Chat_msg",msg);
     });

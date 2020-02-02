@@ -10,13 +10,17 @@ const messages_container = document.getElementById("messages");
 // communicating with server in real time...
 socket.on('Chat_msg', data => {
 
-    alert(data);
+   // alert(data);
 
     var time = new Date();
     time = time.toISOString().split('T')[0];
 
     append_msg_other(data, time);
     notify_unread_messages();
+});
+
+socket.on("notify",data=>{
+    alert(data);
 });
 
 // observing form submission....
@@ -34,7 +38,8 @@ msg_form.addEventListener('submit', e => {
     const msg = msg_input.value;
 
     socket.emit('send_chat_msg', msg);
-    alert("masg send");
+   // alert("masg send");
+
     msg_input.value = "";
     append_msg_self(msg, time)
 });
