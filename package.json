@@ -4,7 +4,7 @@
   "main": "script.js",
   "scripts": {
     "Chat_room": "nodemon server.js",
-    "start": "node index.js server.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
