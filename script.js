@@ -1,5 +1,5 @@
 var origin = window.location.hostname;
-var port =  window.location.port || 8080;
+var port =  window.location.port ;
 console.log(port);
 const socket = io('https://'+ origin +':' + port );
 

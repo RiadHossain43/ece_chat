@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT ;
 var express = require('express');
 var app = express();
 var https = require('https');
