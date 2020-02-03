@@ -1,5 +1,5 @@
 var origin = window.location.hostname;
-var port =  window.location.port ;
+var port = 10000 ;
 console.log(port);
 const socket = io('https://'+ origin +':' + port );
 
