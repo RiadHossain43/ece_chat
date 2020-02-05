@@ -1,7 +1,7 @@
 var origin = window.location.hostname;
-var port =  3000; // window.location.port ||
+var port =   window.location.port || 3000; // window.location.port ||
 console.log(port);
-const socket = io(); //,{secure:true, reconnection: true,  rejectUnauthorized: false} 'http://'+ origin +':' + port 
+const socket = io('http://'+ origin +':' + port); //,{secure:true, reconnection: true,  rejectUnauthorized: false} 'http://'+ origin +':' + port 
 
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
