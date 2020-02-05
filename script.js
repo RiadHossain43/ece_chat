@@ -1,7 +1,7 @@
 var origin = window.location.hostname;
-var port =  window.location.port || 8080;
+var port =  3000; // window.location.port ||
 console.log(port);
-const socket = io('https://'+ origin +':' + port ,{secure:true, reconnection: true,  rejectUnauthorized:false} );
+const socket = io('http://'+ origin +':' + port ); //,{secure:true, reconnection: true,  rejectUnauthorized: false}
 
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
@@ -20,7 +20,7 @@ socket.on('Chat_msg', data => {
 });
 
 socket.on("notify",data=>{
-    alert(data);
+    //alert(data);
 });
 
 // observing form submission....
