@@ -1,9 +1,9 @@
-var PORT = 3000; //process.env.PORT || 
+var PORT = process.env.PORT || 3000; //process.env.PORT || 
 
 const mongo = require('mongodb').MongoClient;
 var express = require('express');
 var app = express();
-var https = require('http');
+var https = require('https');
 
 var server = https.Server(app);
 
