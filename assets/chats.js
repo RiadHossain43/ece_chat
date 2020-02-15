@@ -3,7 +3,7 @@ var origin = window.location.hostname;
 var PORT =  window.location.port ||  3000; // window.location.port ||
 console.log(origin);
 
-const socket = io('http://'+ origin + ':' + PORT ); //'http://'+ origin + ':' + PORT 
+const socket = io(); //'http://'+ origin + ':' + PORT 
 
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
