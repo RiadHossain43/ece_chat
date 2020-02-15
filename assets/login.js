@@ -1,3 +1,13 @@
+var origin = window.location.hostname;
+var PORT =    3000; // window.location.port ||
+console.log(origin);
+
+const socket = io('http://'+ origin + ':' + PORT ); //'http://'+ origin + ':' + PORT 
+
+// socket.on('notify',data=>{
+//     console.log(data);
+// });
+
 const signup_btn = document.getElementById('signup_btn');
 const signin_btn = document.getElementById('signin_btn');
 const signin_cont = document.getElementById('signin_content');
@@ -5,6 +15,8 @@ const signup_cont = document.getElementById('signup_content');
 const signup_form = document.getElementById('signup_form');
 const signin_form = document.getElementById('signin_form');
 const submit = document.getElementsByClassName('Submit');
+const sign_in_user = document.getElementById('sign_in_user');
+const password = document.getElementById('password');
 
 
 signup_btn.addEventListener('click',(e)=>{
@@ -26,6 +38,6 @@ signin_btn.addEventListener('click',(e)=>{
 for(var i =0 ;i < submit.length ;i++)
 {
     submit[i].addEventListener('click',(e)=>{
-        //e.target.parentElement.submit();
+        e.target.parentElement.submit();
     });
 }

@@ -326,6 +326,11 @@
 {
 	display: grid;
 }
+.sender_name
+{
+	background: none;
+	font-size: 13px;
+}
 .sender_img
 {
 	background: url('devdemo.jpg');

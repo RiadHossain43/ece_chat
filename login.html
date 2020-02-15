@@ -3,10 +3,11 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
-	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" type="text/css" href="/assets/login.css">
 	
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<script src="https://kit.fontawesome.com/426991ed3e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/426991ed3e.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
 	
 </head>
 <body class = "mainbody">
@@ -26,12 +27,13 @@
 
     <div id="container">
         <div id="signin">
-            <form id="signin_form" class="form signin_form">
+            <form id="signin_form" class="form signin_form" action="/chats" method="POST">
                 <h1>Sign In</h1>
                 <p>Sign in to join the room</p>
-                <input type="text" class="user_name" placeholder="User Name">
-                <input type="password" class="password" placeholder="Password">
+                <input type="text" name="username" id="sign_in_user" class="user_name" placeholder="User Name">
+                <input type="password" name="password" id="password" placeholder="Password">
                 <button class="Submit" type="button">Submit</button>
+                <p id='create_ac'>Don't have account...?</p>
             </form>
             <div class="content signup_content left_shift" id="signup_content">
                 <h3 class="greetings">Already Have One ?</h3>
@@ -43,8 +45,8 @@
             <form id="signup_form" class="form signup_form right_shift">
                 <h1>Sign Up</h1>
                 <p>Sign up to create an account</p>
-                <input type="text" class="user_name" placeholder="Put a user name here">
-                <input type="password" class="gmail" placeholder="Put a valid gmail id here"> 
+                <input type="text" id="sign_up_user" class="user_name" placeholder="Put a user name here">
+                <input type="text" class="gmail" placeholder="Put a valid gmail id here"> 
                 <button class="Submit" type="button">Submit</button>
             </form>
             <div class="content signin_content" id="signin_content">
@@ -54,6 +56,6 @@
             </div>
         </div>   
     </div>
-    <script defer type="text/javascript" src="login.js"></script>
+    <script defer type="text/javascript" src="/assets/login.js"></script>
 </body>
 </html>

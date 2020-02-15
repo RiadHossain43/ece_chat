@@ -1,28 +1,52 @@
+
 var origin = window.location.hostname;
-var port =   window.location.port || 3000; // window.location.port ||
+var PORT =    3000; // window.location.port ||
 console.log(origin);
 
-const socket = io(); //,{secure:true, reconnection: true,  rejectUnauthorized: false} 'http://'+ origin +':' + port 
+const socket = io('http://'+ origin + ':' + PORT ); //'http://'+ origin + ':' + PORT 
 
 const msg_form = document.getElementById("msg_typesection");
 const msg_input = document.getElementById("msg_input");
 const messages_container = document.getElementById("messages");
 
-// communicating with server in real time...
-socket.on('Chat_msg', data => {
 
-   // alert(data);
+if(socket !== undefined){
+    console.log("Connected to server");
+    // communicating with server in real time... 
 
-    var time = new Date();
-    time = time.toISOString().split('T')[0];
+    socket.on('load_Chat_msg', data => {
+        // alert(data);
+        console.log(data[data.length-1].msg);
+        
+        // loading masseges to ui...
 
-    append_msg_other(data, time);
-    notify_unread_messages();
-});
+        if(data.length)
+        {
+            socket.on('get_user',(user)=>{
+                var username = user;
+                for(var x = 0; x <data.length ;x++){
+                    var time = new Date();
+                    time = time.toISOString().split('T')[0];
+                    console.log(data[x].name+'  '+data[x].msg);
+                    if(data[x].name==username)
+                        append_msg_self(data[x].msg, time);
+                    else
+                        append_msg_other( data[x].name, data[x].msg, time);
+                        notify_unread_messages();
+                }
 
-socket.on("notify",data=>{
-    //alert(data);
-});
+            }); 
+        }
+    });
+
+    socket.on('instant_output',data=>{
+        var time = new Date();
+        time = time.toISOString().split('T')[0];
+        append_msg_other(data.name,data.msg, time);
+        notify_unread_messages();
+    })
+}
+
 
 // observing form submission....
 
@@ -38,7 +62,7 @@ msg_form.addEventListener('submit', e => {
     time = time.toISOString().split('T')[0];
     const msg = msg_input.value;
 
-    socket.emit('send_chat_msg', msg);
+    socket.emit('input', msg);
    // alert("masg send");
 
     msg_input.value = "";
@@ -46,17 +70,20 @@ msg_form.addEventListener('submit', e => {
 });
 
 // appending the messegse in the ui.....
-function append_msg_other(msg, time) {
+function append_msg_other(name,msg, time) {
     const msg_row = document.createElement('div');
 
     const msg_content = document.createElement('div');
     const sender_img = document.createElement('div');
     const msg_txt = document.createElement('div');
     const msg_time = document.createElement('div');
+    const user = document.createElement('div');
 
-    msg_txt.innerText = msg;
+    user.innerText = name;
+    msg_txt.innerText = msg ;
     msg_time.innerText = time;
 
+    msg_row.appendChild(user);
     msg_row.appendChild(msg_content);
     msg_content.appendChild(sender_img);
     msg_content.appendChild(msg_txt);
@@ -67,6 +94,7 @@ function append_msg_other(msg, time) {
     sender_img.classList.add("sender_img");
     msg_txt.classList.add("msg_txt");
     msg_time.classList.add("msg_time");
+    user.classList.add('sender_name');  
 
     //messages_container.appendChild(msg_row);
     messages_container.insertBefore(msg_row, messages_container.firstChild);
