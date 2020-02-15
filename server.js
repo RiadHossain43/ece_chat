@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-var PORT = process.env.PORT 3000;
+var PORT = process.env.PORT || 3000;
 const DEPARTMENTAL_PASS = 'chat';
 
 // Create server....
