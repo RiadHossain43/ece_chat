@@ -1,12 +1,3 @@
-var origin = window.location.hostname;
-var PORT =    3000; // window.location.port ||
-console.log(origin);
-
-const socket = io('http://'+ origin + ':' + PORT ); //'http://'+ origin + ':' + PORT 
-
-// socket.on('notify',data=>{
-//     console.log(data);
-// });
 
 const signup_btn = document.getElementById('signup_btn');
 const signin_btn = document.getElementById('signin_btn');

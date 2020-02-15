@@ -15,6 +15,8 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
+
+
 const url = process.env.MONGODB_URI || 'mongodb://localhost';
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -35,7 +37,7 @@ server.listen(PORT,function(){
 
 //connecting into database...
 
-MongoClient.connect(url, function(err, client) {
+MongoClient.connect(url,{ useUnifiedTopology: true }, function(err, client) {
     assert.equal(null, err);
     console.log("database connected");
 
