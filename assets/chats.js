@@ -1,6 +1,6 @@
 
 var origin = window.location.hostname;
-var PORT =    3000; // window.location.port ||
+var PORT =  window.location.port ||  3000; // window.location.port ||
 console.log(origin);
 
 const socket = io('http://'+ origin + ':' + PORT ); //'http://'+ origin + ':' + PORT 

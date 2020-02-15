@@ -1,12 +1,13 @@
-var PORT = 3000;
+require('dotenv').config();
 
+var PORT = process.env.PORT 3000;
 const DEPARTMENTAL_PASS = 'chat';
 
 // Create server....
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var https = require('http');
+var https = require('https');
 var server = https.Server(app);
 
 const io = require('socket.io')(server);
@@ -14,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const url = 'mongodb://localhost';
+const url = process.env.MONGODB_URI || 'mongodb://localhost';
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
