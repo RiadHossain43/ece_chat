@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const uri = 'mongodb+srv://Riad:Beastrad@43@ece-n95v4.mongodb.net/test?retryWrites=true&w=majority' || 'mongodb://localhost'; // process.env.MONGODB_URI
+const uri = 'mongodb+srv://Riad:Beastrad@43@ece-n95v4.mongodb.net/test?retryWrites=true&w=majority' || 'mongodb://localhost' ; // process.env.MONGODB_URI
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -36,7 +36,7 @@ server.listen(PORT,function(){
 //connecting into database...
 
 MongoClient.connect(uri,{ useUnifiedTopology: true }, function(err, client) {
-    assert.equal(null, err);
+    //assert.equal(null, err);
     console.log("database connected in" +' '+ uri);
 
     app.post('/chats',urlencodedParser,(req,resposnse)=>{
