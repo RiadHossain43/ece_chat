@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 
 var PORT = process.env.PORT || 3000;
 const DEPARTMENTAL_PASS = 'chat';
@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const url = process.env.MONGODB_URI || 'mongodb://localhost';
+const uri = 'mongodb+srv://Riad:Beastrad@43@ece-n95v4.mongodb.net/test?retryWrites=true&w=majority' || 'mongodb://localhost'; // process.env.MONGODB_URI
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -35,9 +35,9 @@ server.listen(PORT,function(){
 
 //connecting into database...
 
-MongoClient.connect(url,{ useUnifiedTopology: true }, function(err, client) {
+MongoClient.connect(uri,{ useUnifiedTopology: true }, function(err, client) {
     assert.equal(null, err);
-    console.log("database connected");
+    console.log("database connected in" +' '+ uri);
 
     app.post('/chats',urlencodedParser,(req,resposnse)=>{
 
