@@ -36,7 +36,7 @@ server.listen(PORT,function(){
 //connecting into database...
 
 MongoClient.connect(uri,{ useUnifiedTopology: true }, function(err, client) {
-    //assert.equal(null, err);
+    assert.equal(null, err);
     console.log("database connected in" +' '+ uri);
 
     app.post('/chats',urlencodedParser,(req,resposnse)=>{
