@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const uri = 'mongodb+srv://Riad:Beastrad@43@ece-n95v4.mongodb.net/test?retryWrites=true&w=majority' || 'mongodb://localhost' ; // process.env.MONGODB_URI
+const uri =  'mongodb://localhost' ; // process.env.MONGODB_URI
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
