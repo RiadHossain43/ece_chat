@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const uri =  'mongodb://localhost' ; // process.env.MONGODB_URI
+const uri = 'mongodb://localhost'; // process.env.MONGODB_URI
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -30,8 +30,6 @@ let username ;
 server.listen(PORT,function(){
     console.log("Chat server running");
 });
-
-
 
 //connecting into database...
 
@@ -65,7 +63,6 @@ MongoClient.connect(uri,{ useUnifiedTopology: true }, function(err, client) {
         //updating user ID with sockect ID
         users.updateOne({name:username},{$set:{id:socket.id}});
         console.log('updated succesfully');
-
 
         // Load all the availabele old chats down to the current client...
         chats.find().sort({_id:1}).toArray((err, res)=>{
