@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const uri = 'mongodb://localhost'; // process.env.MONGODB_URI
+const uri = 'mongodb://localhost'; // process.env.MONGODB_URI need in remote server
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
