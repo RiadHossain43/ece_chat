@@ -7,7 +7,7 @@ const DEPARTMENTAL_PASS = 'chat';
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var https = require('http');
+var https = require('https');
 var server = https.Server(app);
 
 const io = require('socket.io')(server);
@@ -15,7 +15,7 @@ const io = require('socket.io')(server);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const uri = 'mongodb://localhost'; // process.env.MONGODB_URI need in remote server
+const uri = process.env.MONGODB_URI || 'mongodb://localhost'; //  need in remote server 
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -73,7 +73,6 @@ MongoClient.connect(uri,{ useUnifiedTopology: true }, function(err, client) {
 
         // Getting live input & Generating the intantanus output down to the client...
         socket.on('input', (msg)=>{
-
             var user;
             users.find({id:socket.id}).toArray((err,res)=>{
                 if(err) throw err;

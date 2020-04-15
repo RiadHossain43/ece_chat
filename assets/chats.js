@@ -1,6 +1,6 @@
 
 var origin = window.location.hostname;
-var PORT =  window.location.port ||  3000; // window.location.port ||
+var PORT = window.location.port || 3000; // window.location.port ||
 console.log(origin);
 
 const socket = io(); //'http://'+ origin + ':' + PORT 
@@ -10,41 +10,39 @@ const msg_input = document.getElementById("msg_input");
 const messages_container = document.getElementById("messages");
 
 
-if(socket !== undefined){
+if (socket !== undefined) {
     console.log("Connected to server");
     // communicating with server in real time... 
 
     socket.on('load_Chat_msg', data => {
         // alert(data);
-        console.log(data[data.length-1].msg);
-        
+        console.log(data[data.length - 1].msg);
+
         // loading masseges to ui...
 
-        if(data.length)
-        {
-            socket.on('get_user',(user)=>{
+        if (data.length) {
+            socket.on('get_user', (user) => {
                 var username = user;
-                for(var x = 0; x <data.length ;x++){
+                for (var x = 0; x < data.length; x++) {
                     var time = new Date();
                     time = time.toISOString().split('T')[0];
-                    console.log(data[x].name+'  '+data[x].msg);
-                    if(data[x].name==username)
+                    console.log(data[x].name + '  ' + data[x].msg);
+                    if (data[x].name == username)
                         append_msg_self(data[x].msg, time);
                     else
-                        append_msg_other( data[x].name, data[x].msg, time);
-                        notify_unread_messages();
+                        append_msg_other(data[x].name, data[x].msg, time);
+                    //notify_unread_messages();
                 }
 
-            }); 
+            });
         }
     });
 
-    socket.on('instant_output',data=>{
+    socket.on('instant_output', data => {
         var time = new Date();
         time = time.toISOString().split('T')[0];
-        append_msg_other(data.name,data.msg, time);
-        notify_unread_messages();
-    })
+        append_msg_other(data.name, data.msg, time);
+    });
 }
 
 
@@ -63,14 +61,14 @@ msg_form.addEventListener('submit', e => {
     const msg = msg_input.value;
 
     socket.emit('input', msg);
-   // alert("masg send");
+    // alert("masg send");
 
     msg_input.value = "";
     append_msg_self(msg, time)
 });
 
 // appending the messegse in the ui.....
-function append_msg_other(name,msg, time) {
+function append_msg_other(name, msg, time) {
     const msg_row = document.createElement('div');
 
     const msg_content = document.createElement('div');
@@ -80,7 +78,7 @@ function append_msg_other(name,msg, time) {
     const user = document.createElement('div');
 
     user.innerText = name;
-    msg_txt.innerText = msg ;
+    msg_txt.innerText = msg;
     msg_time.innerText = time;
 
     msg_row.appendChild(user);
@@ -94,11 +92,19 @@ function append_msg_other(name,msg, time) {
     sender_img.classList.add("sender_img");
     msg_txt.classList.add("msg_txt");
     msg_time.classList.add("msg_time");
-    user.classList.add('sender_name');  
+    user.classList.add('sender_name');
 
-    //messages_container.appendChild(msg_row);
-    messages_container.insertBefore(msg_row, messages_container.firstChild);
+   
+    var scrollHeight = messages_container.scrollHeight;
+    var currentpos = messages_container.scrollTop + messages_container.offsetHeight;
 
+    if (currentpos != scrollHeight) {
+        messages_container.insertBefore(msg_row, messages_container.firstChild);
+        notify_unread_messages();
+    }else{
+        messages_container.insertBefore(msg_row, messages_container.firstChild);
+        msg_row.scrollIntoView();
+    }
 }
 
 function append_msg_self(msg, time) {
@@ -181,20 +187,19 @@ function mobile_menu_handler() {
         chatbody.style.left = "-100%";
         menu.classList.remove("open");
     });
-    for(var i = 0 ;i<backlink.length;i++)
-    {
-        backlink[i].addEventListener("click",()=>{
+    for (var i = 0; i < backlink.length; i++) {
+        backlink[i].addEventListener("click", () => {
             nav.style.transition = "all 1s ease-out";
             people.style.transition = "all 1s ease-out";
             chatbody.style.transition = "all 1s ease-out";
             nav.style.left = "-100%";
             people.style.left = "-100%";
             chatbody.style.left = "0";
-            setTimeout(()=>{
+            setTimeout(() => {
                 nav.style.transition = "";
                 people.style.transition = "";
                 chatbody.style.transition = "";
-            },1000);
+            }, 1000);
         });
     }
 
