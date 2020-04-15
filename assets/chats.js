@@ -189,9 +189,9 @@ function mobile_menu_handler() {
     });
     for (var i = 0; i < backlink.length; i++) {
         backlink[i].addEventListener("click", () => {
-            nav.style.transition = "all 1s ease-out";
-            people.style.transition = "all 1s ease-out";
-            chatbody.style.transition = "all 1s ease-out";
+            nav.style.transition = "all .7s ease-in-out";
+            people.style.transition = "all .7s ease-in-out";
+            chatbody.style.transition = "all .7s ease-in-out";
             nav.style.left = "-100%";
             people.style.left = "-100%";
             chatbody.style.left = "0";
