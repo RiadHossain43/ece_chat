@@ -7,7 +7,7 @@ const DEPARTMENTAL_PASS = 'chat';
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var https = require('https');
+var https = require('http');
 var server = https.Server(app);
 
 const io = require('socket.io')(server);
