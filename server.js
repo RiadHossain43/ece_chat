@@ -1,7 +1,7 @@
 //require('dotenv').config();
 
 var PORT = process.env.PORT || 3000;
-const DEPARTMENTAL_PASS = 'chat';
+const DEPARTMENTAL_PASS = '18chatEceEng$60';
 
 // Create server....
 var express = require('express');
