@@ -1,7 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body
 {
-	margin: 0;
-    padding: 0;
     background : #eee;
     font-family: 'Poppins', sans-serif;
 }
@@ -86,7 +88,8 @@ body
     height: 100%;
     display: flex;
     flex-direction: column;
-    display: visible;
+    justify-content: center;
+    align-items: center;
     transition: 1s;
 }
 .signup_form
@@ -97,21 +100,21 @@ body
 {
     left: 0;
 }
-#create_ac{
+#create_ac,#already_hv{
     display: none;
-    margin:4% auto;
 }
 .form input
 {
-    margin: 15% auto 0% auto;
+    margin-top: 1em;
     padding: 15px;
     border-radius: 5px;
     border: none;
     background: #E0F2F1;
+    font-size: 18px;
 }
 .form button
 {
-    margin: 15% auto 0% auto;
+    margin-top: 1.2em;
     padding: 15px 30px;
     border-radius: 15px;
     outline: none;
@@ -120,15 +123,15 @@ body
     color: #eee;
     background-color: #4DD0E1;
     cursor: pointer;
+    font-size: 18px;
 }
 .form h1
 {
-    margin: 10% auto 0% auto;
-    padding: 15px;
-    background: transparent;
+    margin-bottom:1em;
+    font-size: 30px;
 }
 .form p{
-    font-size: 13px;
+    font-size: 15px;
     margin: 0 auto;
 }
 .content
@@ -137,11 +140,11 @@ body
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to top right, #4DD0E1 , #80DEEA);
-    top: 45%;
-    transform: translateY(-45%);
-    display: visible;
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: 1s;
-    
 }
 .signin_content
 {
@@ -153,16 +156,15 @@ body
 }
 .greetings
 {
-    margin: 30% auto 0% auto;
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     background: transparent;
     color:white;
 }
 .form_text
 {
-    margin: 10% 10% 0% 10%;
-    font-size: 13px;
+    margin: 1.5em 2em;
+    font-size: 15px;
     text-align: center;
     background: transparent;
     color: white;
@@ -170,10 +172,7 @@ body
 .cng_btn
 {
     position: relative;
-    margin: 15% auto 0% auto;
-    font-size: 14px;
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 18px;
     padding: 17px 50px;
     outline: none;
     border: 1px solid black;
@@ -189,7 +188,7 @@ body
     right: -100%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 
     #container
     {
@@ -208,20 +207,58 @@ body
         overflow: hidden;
         z-index: 3;
     }
+
+    /* .signup_form
+{
+    right: 0;
+}
+.signin_content
+{
+    right: 0;
+}
+.signin_form
+{
+    left: 0;
+}
+.signup_content
+{
+    left: 0;
+} */
+
+.signup_form
+{
+    right: 0%;
+}
+.signin_content
+{  
+    right: 0%;
+}
+.signin_form
+{
+    left:100%;
+}
+.signup_content
+{
+    left:0%;
+}
+
     #signin
     {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%;
+        left:-100%;
     }
     #signup
     {
-       display: none;
+        position: absolute;
+        width: 100%;
+        height:100%;
+        left:100%;
     }
-    #create_ac{
-        display: inline-block;
-        margin:4% auto;
+    #create_ac,#already_hv{
+        display: block;
+        margin:2em;
+        cursor: pointer;
     }
-    
-
 }
