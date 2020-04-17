@@ -169,21 +169,18 @@ function mobile_menu_handler() {
     const backlink = document.getElementsByClassName("backlink");
 
     menubar.firstChild.addEventListener("click", () => {
-        //alert("hi");
         menu.classList.add("open");
     });
     menucut.addEventListener("click", () => {
         menu.classList.remove("open");
     });
     menulink[0].addEventListener("click", () => {
-        // alert("ok 1");
-        nav.style.left = "0";
+        people.style.left = "0";
         chatbody.style.left = "-100%";
         menu.classList.remove("open");
     });
     menulink[1].addEventListener("click", () => {
-        //alert("ok 2");
-        people.style.left = "0";
+        nav.style.left = "0";
         chatbody.style.left = "-100%";
         menu.classList.remove("open");
     });
@@ -204,6 +201,38 @@ function mobile_menu_handler() {
     }
 
 }
+function admin_pannel(){
+    const ADMIN_PASS = "RiadChat";
+    let admin_pannel = document.getElementById('admin_pannel');
+    let admin_cut = document.getElementById('admin_cut');
+    let pass_cut = document.getElementById('pass_cut');
+    let admin = document.getElementById('admin');
+    let admin_var = document.getElementById('admin_var');
+    let msg_del = document.getElementById('msg_del');
+    let varify = document.getElementById('admin_login');
+    let admin_pass = document.getElementById('admin_pass');
+
+    admin_pannel.addEventListener('click',()=>{
+        admin_var.style.display = 'flex';
+    });
+    admin_cut.addEventListener('click',()=>{
+        admin.style.display = 'none';
+    });
+    pass_cut.addEventListener('click',()=>{
+        admin_var.style.display = 'none';
+    });
+    msg_del.addEventListener('click',()=>{
+        socket.emit('delet', true);
+    });
+    varify.addEventListener('click',()=>{
+        if(admin_pass.value===ADMIN_PASS){
+            admin.style.display = 'flex';
+            admin_var.style.display = 'none';
+            admin_pass.value="";
+        }
+    });
+}
 // Utility function Function calls...
 find_new_msg();
 mobile_menu_handler();
+admin_pannel();

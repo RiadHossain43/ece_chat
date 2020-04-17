@@ -16,10 +16,6 @@ body
     background: #4DD0E1;
     z-index: 4;
 }
-#logo
-{
-
-}
 #style_2
 {
     position: absolute;
@@ -110,7 +106,8 @@ body
     border-radius: 5px;
     border: none;
     background: #E0F2F1;
-    font-size: 18px;
+    font-size: 16px;
+    width: 60%;
 }
 .form button
 {
@@ -123,7 +120,7 @@ body
     color: #eee;
     background-color: #4DD0E1;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 .form h1
 {
@@ -160,6 +157,7 @@ body
     text-align: center;
     background: transparent;
     color:white;
+    line-height: 1.2em;
 }
 .form_text
 {
@@ -173,7 +171,7 @@ body
 {
     position: relative;
     font-size: 18px;
-    padding: 17px 50px;
+    padding: 15px 30px;
     outline: none;
     border: 1px solid black;
     border-radius: 20px;
@@ -208,23 +206,7 @@ body
         z-index: 3;
     }
 
-    /* .signup_form
-{
-    right: 0;
-}
-.signin_content
-{
-    right: 0;
-}
-.signin_form
-{
-    left: 0;
-}
-.signup_content
-{
-    left: 0;
-} */
-
+  
 .signup_form
 {
     right: 0%;
@@ -256,6 +238,16 @@ body
         height:100%;
         left:100%;
     }
+    .form input
+{
+    margin-top: 1em;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #E0F2F1;
+    font-size: 18px;
+    width: auto;
+}
     #create_ac,#already_hv{
         display: block;
         margin:2em;

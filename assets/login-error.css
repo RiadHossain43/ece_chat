@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    margin: .5em;
+}
+a{
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #4DD0E1;
+    border-radius: 4px;
+}
